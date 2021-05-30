@@ -31,7 +31,14 @@
                 </a> --}}
                 @auth
                 <a class="navbar-brand" href="{{ url('/home') }}">Início</a>
-                <a class="navbar-brand" href="{{ url('/company') }}">Empresa</a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ __('Registers') }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="navbar-brand" href="{{ url('/company') }}">{{ __('Company') }}</a>
+                    </div>
+                </div>
                 @else
                 <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Laravel</a>
                 @endauth
