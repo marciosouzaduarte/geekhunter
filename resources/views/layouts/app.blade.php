@@ -30,7 +30,7 @@
                 {{ config('app.name', 'Laravel') }}
                 </a> --}}
                 @auth
-                <a class="navbar-brand" href="{{ url('/home') }}">Home</a>
+                <a class="navbar-brand" href="{{ url('/home') }}">Início</a>
                 <a class="navbar-brand" href="{{ url('/company') }}">Empresa</a>
                 @else
                 <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">Laravel</a>
