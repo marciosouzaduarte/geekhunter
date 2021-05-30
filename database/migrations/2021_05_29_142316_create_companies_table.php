@@ -17,7 +17,7 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('name', 100)->unique();
             $table->boolean('active')->default(true);
-            $table->string('zipcode', 9);
+            $table->string('zipcode', 12);
             $table->string('address');
             $table->timestamps();
         });

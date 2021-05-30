@@ -6,7 +6,7 @@
 - ** V - Use your favorite stack :)
 - ** V - Have a database, with ORM configured
 - ** V - Have a frontend/backend
-- ** X - Have a testing structure
+- ** V - Have a testing structure
 - ** V - Have a basic CRUD of a simple entity (eg person), being able to at least create and update records of this entity
 - ** V - Must be running on your local machine
 

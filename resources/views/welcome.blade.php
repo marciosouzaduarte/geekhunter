@@ -425,6 +425,7 @@
                 -->
                 <img src="{{ asset('img/geekhunter.png') }}" />
             </div>
+            <span class="flex justify-center" style="color: #F7FAFC;">geekhunter</span>
         </div>
     </div>
 </body>

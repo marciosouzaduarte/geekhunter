@@ -22,6 +22,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/company/delete/{id}', [CompanyController::class, 'delete'])->name('company.delete');
-Route::get('/company/search', [CompanyController::class, 'search'])->name('company.search');
-Route::resource('company', CompanyController::class);
+Route::get('/company/delete/{id}', [CompanyController::class, 'delete'])->name('company.delete')->middleware('auth');
+Route::get('/company/search', [CompanyController::class, 'search'])->name('company.search')->middleware('auth');
+Route::resource('company', CompanyController::class)->middleware('auth');
