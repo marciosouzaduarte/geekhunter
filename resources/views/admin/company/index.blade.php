@@ -22,7 +22,7 @@
                     @foreach($companies as $key => $value)
                     <div class="row">
                         <div class="col-md-9">
-                            <a href="{{ route('company.show', $value->id) }}">{{ $value->name . " | " . $value->address }}</a>
+                            <a style="{{ !$value->active ? 'color: grey;' : '' }}" href="{{ route('company.show', $value->id) }}">{{ $value->name . " | " . $value->address }}</a>
                         </div>
                         <div class="col-md-3">
                             <div class="row">
