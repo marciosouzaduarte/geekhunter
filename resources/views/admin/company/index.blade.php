@@ -5,7 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header d-flex d-flex justify-content-between">
+                <form id="form0" action="{{ route("company.search") }}" method="GET">
+                    <div class="card-header d-flex">
+                        @csrf
+                        <input type="text" id="search" name="search" placeholder="{{ __('search') }}">&nbsp;
+                        <input class="btn btn-info" type="submit" id="bt_search" name="bt_search" value="Pesquisar">
+                    </div>
+                </form>
+            </div>
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
                     <span class="">Listagem de Empresas</span>
                     <span class=""><a href="{{ route('company.create') }}">Nova Empresa (+)</a></span>
                 </div>

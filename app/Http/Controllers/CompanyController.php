@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
 
 class CompanyController extends Controller
 {
@@ -117,5 +118,20 @@ class CompanyController extends Controller
         Company::destroy($id);
 
         return View::make('admin.company.index')->with('companies', Company::paginate($this->_linesPerPage));
+    }
+
+    /**
+     * Search a listing of the resource.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $companies = Company::where(DB::raw('lower(name)'), 'like', '%' . strtolower($request->search) . '%')
+            ->paginate($this->_linesPerPage)
+            ->appends(['search' => $request->search]);
+
+        return View::make('admin.company.index')->with('companies', $companies);
     }
 }
