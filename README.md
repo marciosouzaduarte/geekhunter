@@ -11,10 +11,11 @@
 - ** V - Must be running on your local machine
 
 ### Steps to run the application
-- ** git remote add origem https://github.com/marciosouzaduarte/geekhunter.git
+- ** configure your database
+- ** git clone https://github.com/marciosouzaduarte/geekhunter.git geekhunter
 - ** composer update
 - ** npm install
 - ** npm run dev
 - ** php artisan migrate
 - ** php artisan db:seed
-
+- ** php artisan serve
