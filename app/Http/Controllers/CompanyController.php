@@ -128,7 +128,7 @@ class CompanyController extends Controller
      */
     public function search(Request $request)
     {
-        $companies = Company::where(DB::raw('lower(name)'), 'like', '%' . strtolower($request->search) . '%')
+        $companies = Company::where(DB::raw("lower(concat(name, ' ', address))"), 'like', '%' . strtolower($request->search) . '%')
             ->paginate($this->_linesPerPage)
             ->appends(['search' => $request->search]);
 
