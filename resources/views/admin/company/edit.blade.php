@@ -16,7 +16,7 @@
                         </ul>
                     </p>
                     <form id="form0" action="{{ route("company.update", $company->id) }}" method="POST" @submit="__checkForm">
-                        <input type="hidden" name="_method" v-model="method" value="PUT">
+                        <input type="hidden" name="_method" v-model="method">
                         @csrf
                         <div class="row form-group">
                             <div class="col-md-2">

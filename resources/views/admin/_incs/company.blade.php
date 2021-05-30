@@ -22,7 +22,7 @@
             }
             , __update() {
                 this.check = true;
-                this.method = 'UPDATE';
+                this.method = 'PUT';
             }
             , __destroy() {
                 this.check = false;

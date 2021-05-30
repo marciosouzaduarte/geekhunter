@@ -15,7 +15,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return View::make('admin.company.index')->with('companies', Company::all());
+        return View::make('admin.company.index')->with('companies', Company::paginate(10));
     }
 
     /**
@@ -82,7 +82,6 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        dd($request->all());
         $company->name = $request->name;
         $company->zipcode = $request->zipcode;
         $company->address = $request->address;
