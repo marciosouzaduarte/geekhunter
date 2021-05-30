@@ -41,8 +41,16 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="active" name="active" value="{{ $company->active ? '1' : '0' }}" {{ $company->active ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="active">Ativo</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-check-input" type="radio" id="active1" name="active" value="1" {{ $company->active == '1' ? 'checked' : '' }} v-model="active">
+                                            <label class="form-check-label" for="active">Ativo</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-check-input" type="radio" id="active2" name="active" value="0" {{ $company->active == '0' ? 'checked' : '' }} v-model="active">
+                                            <label class="form-check-label" for="active">Inativo</label>
+                                        </div> 
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-9 text-right">

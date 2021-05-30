@@ -1,37 +1,38 @@
 @push('scripts')
 <script type="text/javascript">
     var app = new Vue({
-        el: '#app'
-        , data: {
-            method: 'POST'
-            , check: false
-            , errors: []
-            , name: '{{ $company->name ?? "" }}'
-            , address: '{{ $company->address ?? "" }}'
-        , }
-        , methods: {
+        el: '#app',
+        data: {
+            method: 'POST',
+            check: false,
+            errors: [],
+            name: '{{ $company->name ?? "" }}',
+            address: '{{ $company->address ?? "" }}',
+            active: '{{ $company->active ?? "0"}}',
+        },
+        methods: {
             __create() {
                 document.location.href = "{{ route('company.create') }}";
-            }
-            , __edit() {
+            },
+            __edit() {
                 document.location.href = "{{ route('company.edit', $company->id ?? 0) }}";
-            }
-            , __store() {
+            },
+            __store() {
                 this.check = true;
                 this.method = 'POST';
-            }
-            , __update() {
+            },
+            __update() {
                 this.check = true;
                 this.method = 'PUT';
-            }
-            , __destroy() {
+            },
+            __destroy() {
                 this.check = false;
                 this.method = 'DELETE';
-            }
-            , __back() {
+            },
+            __back() {
                 document.location.href = "{{ route('company.index') }}";
-            }
-            , __checkForm(e) {
+            },
+            __checkForm(e) {
                 if (this.check) {
                     if (this.name && this.address) {
                         return true;
@@ -51,6 +52,5 @@
             }
         }
     });
-
 </script>
 @endpush

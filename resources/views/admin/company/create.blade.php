@@ -39,13 +39,21 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="active" name="active" value="">
-                                    <label class="form-check-label" for="active">Ativo</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-check-input" type="radio" id="active1" name="active" value="1" checked v-model="active">
+                                            <label class="form-check-label" for="active">Ativo</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-check-input" type="radio" id="active2" name="active" value="0" v-model="active">
+                                            <label class="form-check-label" for="active">Inativo</label>
+                                        </div> 
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-9 text-right">
+                            <div class="col-md-8 text-right">
                                 <input class="btn btn-primary" type="submit" id="bt_submit" name="bt_submit" value="Salvar" @click="__store()">
                                 <input class="btn btn-secondary" type="button" id="bt_voltar" name="bt_voltar" value="Voltar" @click="__back()">
                             </div>
