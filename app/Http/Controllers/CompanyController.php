@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\View;
 
 class CompanyController extends Controller
 {
+    private int $_linesPerPage = 10;
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return View::make('admin.company.index')->with('companies', Company::paginate(10));
+        return View::make('admin.company.index')->with('companies', Company::paginate($this->_linesPerPage));
     }
 
     /**
@@ -102,7 +104,7 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return View::make('admin.company.index')->with('companies', Company::all());
+        return View::make('admin.company.index')->with('companies', Company::paginate($this->_linesPerPage));
     }
 
     /**
@@ -114,6 +116,6 @@ class CompanyController extends Controller
     {
         Company::destroy($id);
 
-        return View::make('admin.company.index')->with('companies', Company::all());
+        return View::make('admin.company.index')->with('companies', Company::paginate($this->_linesPerPage));
     }
 }

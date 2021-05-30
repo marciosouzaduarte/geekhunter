@@ -29,7 +29,9 @@
                     @endforeach
                     <div class="row">
                         <div class="col-md-12">
-                            {{-- {{ $companies->links() }} --}}
+                            <div class="d-flex justify-content-center">
+                                {{ $companies->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
