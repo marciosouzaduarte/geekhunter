@@ -48,7 +48,7 @@
                             <div class="col-md-9 text-right">
                                 <input class="btn btn-success" type="button" id="bt_create" name="bt_create" value="Novo" @click="__create()">
                                 <input class="btn btn-primary" type="submit" id="bt_store" name="bt_store" value="Salvar" @click="__update()">
-                                <input class="btn btn-danger" type="submit" id="bt_destroy" name="bt_destroy" value="Excluir" @click="__destroy()">
+                                <input class="btn btn-danger" type="submit" id="bt_destroy" name="bt_destroy" value="Excluir" @click="__destroy()" onclick="return confirm('{{ __('Are you sure you want to delete?') }}');">
                                 <input class="btn btn-secondary" type="button" id="bt_back" name="bt_back" value="Voltar" @click="__back()">
                             </div>
                         </div>
