@@ -44,11 +44,11 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <input class="form-check-input" type="radio" id="active1" name="active" value="1" {{ $company->active == '1' ? 'checked' : '' }} v-model="active">
-                                            <label class="form-check-label" for="active">Ativo</label>
+                                            <label class="form-check-label" for="active1">Ativo</label>
                                         </div>
                                         <div class="col-md-6">
                                             <input class="form-check-input" type="radio" id="active2" name="active" value="0" {{ $company->active == '0' ? 'checked' : '' }} v-model="active">
-                                            <label class="form-check-label" for="active">Inativo</label>
+                                            <label class="form-check-label" for="active2">Inativo</label>
                                         </div> 
                                     </div>
                                 </div>
