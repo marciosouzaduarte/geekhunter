@@ -103,6 +103,18 @@ class CompanyController extends Controller
     {
         $company->delete();
 
-        return View::make('admin.company.create');
+        return View::make('admin.company.index')->with('companies', Company::all());
+    }
+
+    /**
+     * Delete the specified resource from storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        Company::destroy($id);
+
+        return View::make('admin.company.index')->with('companies', Company::all());
     }
 }

@@ -21,7 +21,7 @@
                                     <a href="{{ route('company.edit', $value->id) }}">Editar</a>
                                 </div>
                                 <div class="col-md-6">
-                                    <a href="{{ route('company.destroy', $value->id) }}">Excluir</a>
+                                    <a href="{{ route('company.delete', $value->id) }}">Excluir</a>
                                 </div>
                             </div>
                         </div>
